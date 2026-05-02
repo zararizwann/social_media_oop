@@ -2,7 +2,7 @@
 #define USER_H
 #include "content.h"
 
-class pages;
+class page;
 class post;
 class datee;
 
@@ -10,7 +10,7 @@ class datee;
 class user : public content {
 private:
 	user** friendlist;
-	pages** likedpages;
+	page** likedpages;
 	post** posts;
 	int friendcount, likedpagescount, postcount;
 
@@ -18,9 +18,9 @@ public:
 	user(const char* id1, const  char* name1) :content(id1, name1) {};
 	void addfriend(user* u);
 	void addposts(post* p);
-	void addlikedpages(pages* p);
+	void addlikedpages(page* p);
 	user** getfriendlist();
-	pages** getlikedpages();
+	page** getlikedpages();
 	post** getposts();
 	int getpostcount();
 	int getlikedpagescount();
